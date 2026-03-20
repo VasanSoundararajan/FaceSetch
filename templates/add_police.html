@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Add Police Officer</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: #f4f6fb;
+        }
+
+
+        /* NAVBAR */
+
+        .navbar {
+            background: linear-gradient(90deg, #b30000, #ff2a2a);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 70px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+        }
+
+        .logo {
+            background: #1f3a3d;
+            padding: 18px 35px;
+            border-radius: 0 0 40px 40px;
+            color: white;
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        .profile {
+            color: white;
+            font-size: 15px;
+        }
+
+
+        /* LAYOUT */
+
+        .wrapper {
+            display: flex;
+        }
+
+
+        /* SIDEBAR */
+
+        .sidebar {
+            width: 240px;
+            min-height: 100vh;
+            background: linear-gradient(180deg, #8b0000, #d10000);
+            padding-top: 40px;
+            box-shadow: 5px 0 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .sidebar a {
+
+            display: flex;
+            align-items: center;
+            gap: 12px;
+
+            margin: 12px 18px;
+
+            padding: 14px 18px;
+
+            border-radius: 12px;
+
+            text-decoration: none;
+
+            color: white;
+
+            background: rgba(255, 255, 255, 0.08);
+
+            border: 1px solid rgba(255, 255, 255, 0.15);
+
+            transition: 0.35s;
+
+        }
+
+        .sidebar a i {
+
+            width: 34px;
+            height: 34px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: rgba(255, 255, 255, 0.18);
+
+            border-radius: 8px;
+
+        }
+
+        .sidebar a:hover {
+
+            background: white;
+            color: #b30000;
+
+            transform: translateX(6px);
+
+        }
+
+        .sidebar a.active {
+
+            background: white;
+            color: #b30000;
+            font-weight: 600;
+
+        }
+
+        .sidebar a.active i {
+            background: #b30000;
+            color: white;
+        }
+
+
+        /* CONTENT */
+        .content {
+
+            flex: 1;
+
+            padding: 50px 60px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+        }
+
+        .title {
+            font-size: 30px;
+            font-weight: 700;
+            margin-bottom: 35px;
+            text-align: center;
+        }
+
+        /* FORM CARD */
+
+        .form-box {
+
+            max-width: 520px;
+
+            width: 100%;
+
+            background: white;
+
+            border-radius: 18px;
+
+            padding: 35px;
+
+            border: 2px solid #e6e6e6;
+
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+
+            margin-top: 10px;
+
+        }
+
+        .form-box h2 {
+            margin-bottom: 25px;
+        }
+
+
+        /* INPUT GROUP */
+
+        .input-group {
+
+            display: flex;
+            align-items: center;
+
+            border: 1px solid #ccc;
+
+            border-radius: 8px;
+
+            margin-bottom: 15px;
+
+            overflow: hidden;
+
+        }
+
+        .input-group i {
+
+            background: #f3f3f3;
+
+            padding: 12px;
+
+            color: #b30000;
+
+        }
+
+        .input-group input {
+
+            border: none;
+
+            outline: none;
+
+            padding: 12px;
+
+            width: 100%;
+
+            font-size: 14px;
+
+        }
+
+
+        /* BUTTON */
+
+        .form-box button {
+
+            width: 100%;
+
+            padding: 12px;
+
+            border: none;
+
+            border-radius: 8px;
+
+            background: #b30000;
+
+            color: white;
+
+            font-weight: 600;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+
+        }
+
+        .form-box button:hover {
+            background: #ff3c3c;
+        }
+
+
+        /* FOOTER */
+
+        .footer {
+
+            background: #111;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 10px;
+
+            font-size: 13px;
+
+            margin-top: 40px;
+
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <div class="navbar">
+
+        <div class="logo">🕵️ Forensic AI</div>
+
+        <div class="profile">
+            <i class="fa-solid fa-user-shield"></i>
+            {{ session['admin'] }}
+        </div>
+
+    </div>
+
+
+    <div class="wrapper">
+
+
+        <!-- SIDEBAR -->
+
+        <div class="sidebar">
+
+            <a href="/admin_dashboard">
+                <i class="fa-solid fa-chart-line"></i>
+                Dashboard
+            </a>
+
+            <a href="/upload_criminal">
+                <i class="fa-solid fa-database"></i>
+                Criminal Database
+            </a>
+
+
+            <a href="/view_police_stations">
+                <i class="fa-solid fa-building"></i>
+                Polices
+            </a>
+
+            <a href="/add_police" class="active">
+                <i class="fa-solid fa-user-shield"></i>
+                Add Police
+            </a>
+
+            <a href="/logout">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                Logout
+            </a>
+
+        </div>
+
+
+
+
+        <!-- CONTENT -->
+
+        <div class="content">
+
+            <h1 class="title">Add Police Officer</h1>
+
+
+            <div class="form-box">
+
+                <h2>Officer Registration</h2>
+
+                <form method="POST" style="align-items: center;">
+
+                    <div class="input-group">
+                        <i class="fa-solid fa-user"></i>
+                        <input name="name" placeholder="Officer Name" required>
+                    </div>
+
+                    <div class="input-group">
+                        <i class="fa-solid fa-envelope"></i>
+                        <input name="email" placeholder="Email Address" required>
+                    </div>
+
+                    <div class="input-group">
+                        <i class="fa-solid fa-phone"></i>
+                        <input name="mobile" placeholder="Mobile Number" required>
+                    </div>
+
+                    <div class="input-group">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <input name="location" placeholder="Location" required>
+                    </div>
+
+                    <div class="input-group">
+                        <i class="fa-solid fa-building"></i>
+                        <input name="station" placeholder="Station Name" required>
+                    </div>
+
+                    <div class="input-group">
+                        <i class="fa-solid fa-id-badge"></i>
+                        <input name="police_id" placeholder="Police ID" required>
+                    </div>
+
+                    <div class="input-group">
+                        <i class="fa-solid fa-user-lock"></i>
+                        <input name="username" placeholder="Username" required>
+                    </div>
+
+                    <div class="input-group">
+                        <i class="fa-solid fa-key"></i>
+                        <input type="password" name="password" placeholder="Password" required>
+                    </div>
+
+                    <button type="submit">
+                        Add Officer
+                    </button>
+
+                </form>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <div class="footer">
+        Eyewitness Face Sketch System
+    </div>
+
+
+</body>
+
+</html>

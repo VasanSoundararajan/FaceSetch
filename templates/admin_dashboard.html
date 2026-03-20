@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Dashboard</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: #f4f6fb;
+        }
+
+        /* NAVBAR */
+
+        .navbar {
+            background: linear-gradient(90deg, #b30000, #ff2a2a);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 70px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+        }
+
+        .logo {
+            background: #1f3a3d;
+            padding: 18px 35px;
+            border-radius: 0 0 40px 40px;
+            color: white;
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        .profile {
+            color: white;
+            font-size: 15px;
+        }
+
+
+        /* LAYOUT */
+
+        .wrapper {
+            display: flex;
+        }
+
+
+        /* SIDEBAR */
+
+        .sidebar {
+            width: 240px;
+            min-height: 100vh;
+            background: linear-gradient(180deg, #8b0000, #d10000);
+            padding-top: 40px;
+            box-shadow: 5px 0 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .sidebar a {
+
+            display: flex;
+            align-items: center;
+            gap: 12px;
+
+            margin: 12px 18px;
+
+            padding: 14px 18px;
+
+            border-radius: 12px;
+
+            text-decoration: none;
+
+            color: white;
+
+            background: rgba(255, 255, 255, 0.08);
+
+            border: 1px solid rgba(255, 255, 255, 0.15);
+
+            transition: 0.35s;
+
+            font-size: 15px;
+
+        }
+
+        .sidebar a i {
+
+            width: 34px;
+            height: 34px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: rgba(255, 255, 255, 0.18);
+
+            border-radius: 8px;
+
+        }
+
+        .sidebar a:hover {
+
+            background: white;
+            color: #b30000;
+
+            transform: translateX(6px);
+
+        }
+
+        .sidebar a.active {
+
+            background: white;
+            color: #b30000;
+            font-weight: 600;
+
+        }
+
+        .sidebar a.active i {
+
+            background: #b30000;
+            color: white;
+
+        }
+
+
+        /* CONTENT */
+
+        .content {
+            flex: 1;
+            padding: 50px 60px;
+        }
+
+        .title {
+            font-size: 30px;
+            font-weight: 700;
+            margin-bottom: 40px;
+        }
+
+
+        /* CARD GRID */
+
+        .cards {
+
+            display: grid;
+
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+
+            gap: 30px;
+
+        }
+
+
+        /* CARD STYLE */
+
+        .card {
+
+            height: 210px;
+
+            border-radius: 18px;
+
+            padding: 28px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+
+            background: white;
+
+            border: 2px solid #e6e6e6;
+
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+
+            transition: 0.35s;
+
+        }
+
+
+        /* ICON */
+
+        .card i {
+
+            font-size: 44px;
+
+            color: #b30000;
+
+            margin-bottom: 15px;
+
+        }
+
+
+        /* TITLE */
+
+        .card h3 {
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+
+
+        /* TEXT */
+
+        .card p {
+            font-size: 14px;
+            color: #555;
+            max-width: 220px;
+        }
+
+
+        /* HOVER EFFECT */
+
+        .card:hover {
+
+            transform: translateY(-8px);
+
+            border-color: #b30000;
+
+            background: linear-gradient(135deg, #b30000, #ff3c3c);
+
+            color: white;
+
+            box-shadow: 0 18px 35px rgba(0, 0, 0, 0.25);
+
+        }
+
+        .card:hover i {
+            color: white;
+        }
+
+        .card:hover p {
+            color: #f1f1f1;
+        }
+
+
+        /* FOOTER */
+
+        .footer {
+
+            background: #111;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 10px;
+
+            font-size: 13px;
+
+            margin-top: 40px;
+
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <div class="navbar">
+
+        <div class="logo">🕵️ Forensic AI</div>
+
+        <div class="profile">
+            <i class="fa-solid fa-user-shield"></i>
+            {{ session['admin'] }}
+        </div>
+
+    </div>
+
+
+
+    <div class="wrapper">
+
+
+        <!-- SIDEBAR -->
+
+        <div class="sidebar">
+
+            <a href="/admin_dashboard" class="active">
+                <i class="fa-solid fa-chart-line"></i>
+                Dashboard
+            </a>
+
+            <a href="/upload_criminal">
+                <i class="fa-solid fa-database"></i>
+                Criminal Database
+            </a>
+
+
+            <a href="/view_police_stations">
+                <i class="fa-solid fa-building"></i>
+                Police Stations
+            </a>
+
+            <a href="/add_police">
+                <i class="fa-solid fa-user-shield"></i>
+                Add Police
+            </a>
+
+            <a href="/logout">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                Logout
+            </a>
+
+        </div>
+
+
+
+        <!-- CONTENT -->
+
+        <div class="content">
+
+            <h1 class="title">Admin Dashboard</h1>
+
+
+            <div class="cards">
+
+
+                <a href="/upload_criminal" style="text-decoration:none;color:inherit;">
+
+                    <div class="card">
+
+                        <i class="fa-solid fa-database"></i>
+
+                        <h3>Criminal Database</h3>
+
+                        <p>
+                            Upload criminal records
+                            for AI suspect matching.
+                        </p>
+
+                    </div>
+
+                </a>
+
+                <a href="/view_police_stations" style="text-decoration:none;color:inherit;">
+
+                    <div class="card">
+
+                        <i class="fa-solid fa-building"></i>
+
+                        <h3>Police Stations</h3>
+
+                        <p>
+                            View registered police stations
+                            and officer details.
+                        </p>
+
+                    </div>
+
+                </a>
+
+
+
+
+                <a href="/add_police" style="text-decoration:none;color:inherit;">
+
+                    <div class="card">
+
+                        <i class="fa-solid fa-user-shield"></i>
+
+                        <h3>Add Police</h3>
+
+                        <p>
+                            Register new police officers
+                            to access the AI system.
+                        </p>
+
+                    </div>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="footer">
+        Eyewitness Face Sketch System
+    </div>
+
+
+</body>
+
+</html>

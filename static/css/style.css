@@ -1,0 +1,105 @@
+body {
+    font-family: Poppins;
+    background: #f4f7fb;
+    margin: 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    background: #0b3d91;
+    padding: 15px;
+    color: white;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+}
+
+.login-box,
+.form-box,
+.voice-box {
+
+    width: 400px;
+    margin: 40px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+
+}
+
+input,
+textarea {
+
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+
+}
+
+button {
+
+    background: #0b3d91;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+
+}
+
+.cards {
+
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 40px;
+
+}
+
+.card {
+
+    background: white;
+    padding: 20px;
+    width: 250px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+
+    transition: 0.3s;
+
+}
+
+.card:hover {
+
+    transform: translateY(-10px);
+
+}
+
+.images {
+
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+
+}
+
+.footer {
+
+    background: #0b3d91;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: 50px;
+
+}

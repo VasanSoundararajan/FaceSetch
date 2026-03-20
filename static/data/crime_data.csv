@@ -1,0 +1,51 @@
+id,name,age,crime_year,crime_type,no_of_crimes,last_known_location,criminal_status,description,prompt,sketch_image
+1,Arjun Kumar,30,2022,Robbery,3,Chennai,At Large,"Known for multiple jewelry store robberies in Chennai. Usually targets small shops during evening hours and intimidates shopkeepers.","Male around 30 years old with oval face and thick eyebrows",sketch_001.jpg
+2,Ravi Patel,42,2021,Fraud,5,Mumbai,Under Investigation,"Financial fraud specialist who scams small business owners through fake investment opportunities and forged documents.","Middle aged man with square face and moustache",sketch_002.jpg
+3,Daniel Smith,25,2023,Pickpocketing,2,Delhi,At Large,"Reported in several metro station pickpocket cases and often works in crowded areas targeting distracted commuters.","Young man with curly hair and narrow face",sketch_003.jpg
+4,Prakash Nair,34,2020,Assault,4,Kochi,Arrested,"Involved in multiple violent bar fights during nightlife events and recently arrested after a serious assault complaint.","Male with round face and small eyes",sketch_004.jpg
+5,John Fernandes,40,2022,Drug Trafficking,6,Goa,At Large,"Suspected distributor of narcotics in nightlife zones using club networks to move illegal substances.","Man with beard and oval face",sketch_005.jpg
+6,Rahul Singh,26,2023,Burglary,3,Jaipur,At Large,"Breaks into residential houses during late night hours and targets homes where owners are traveling.","Young male with narrow face and curly hair",sketch_006.jpg
+7,Michael Dsouza,33,2019,Identity Theft,4,Bangalore,Under Investigation,"Steals personal information from online platforms and uses stolen identities for financial fraud.","Man with oval face and medium hair",sketch_007.jpg
+8,Sanjay Verma,35,2021,Highway Robbery,3,Hyderabad,At Large,"Targets delivery drivers on highways and escapes quickly using motorcycles.","Male with sharp nose and short hair",sketch_008.jpg
+9,Ahmed Khan,44,2018,Extortion,7,Mumbai,At Large,"Associated with threatening shop owners and collecting protection money through intimidation.","Middle aged man with square jaw and moustache",sketch_009.jpg
+10,Rohit Sharma,23,2023,Phone Theft,2,Delhi,At Large,"Involved in mobile phone theft cases in crowded markets and metro stations.","Young man with round face and small nose",sketch_010.jpg
+11,Vikram Desai,31,2022,Bank Fraud,3,Ahmedabad,Under Investigation,"Linked to unauthorized banking transactions and phishing websites used to steal login credentials.","Male with oval face and long nose",sketch_011.jpg
+12,George Thomas,45,2020,Illegal Trading,5,Kochi,At Large,"Operates underground trading networks selling counterfeit electronic products in illegal markets.","Man with beard and wide face",sketch_012.jpg
+13,Karan Malhotra,24,2023,Vehicle Theft,3,Chandigarh,At Large,"Steals motorcycles from residential areas and sells them using fake registration numbers.","Young male with curly hair and narrow face",sketch_013.jpg
+14,Imran Shaikh,29,2022,Robbery,4,Pune,At Large,"Targets people withdrawing cash from ATMs and follows them before committing robbery.","Man with oval face and thick eyebrows",sketch_014.jpg
+15,Ajay Reddy,30,2021,Burglary,3,Hyderabad,At Large,"Breaks into houses during family vacations and steals electronics and jewelry.","Male with straight hair and sharp jawline",sketch_015.jpg
+16,Nikhil Bansal,22,2023,Pickpocketing,2,Delhi,At Large,"Often spotted in crowded railway stations targeting wallets and mobile phones.","Young man with round face and small eyes",sketch_016.jpg
+17,Deepak Gupta,36,2022,Illegal Gambling,4,Jaipur,Under Investigation,"Operates underground betting networks and organizes illegal gambling events.","Man with oval face and thick lips",sketch_017.jpg
+18,Yusuf Ali,41,2019,Smuggling,5,Mumbai,At Large,"Connected to smuggling electronic goods through coastal shipping routes.","Middle aged man with beard and square face",sketch_018.jpg
+19,Sameer Khan,27,2023,Street Theft,3,Bhopal,At Large,"Targets tourists in crowded areas and steals wallets bags and phones.","Young male with curly hair and narrow chin",sketch_019.jpg
+20,Suresh Pillai,35,2020,Assault,4,Kochi,Arrested,"Known for violent disputes in markets and nightlife areas.","Man with straight hair and thick eyebrows",sketch_020.jpg
+21,Rajat Kapoor,32,2021,Vehicle Theft,3,Delhi,At Large,"Steals parked vehicles from residential colonies and sells them with forged documents.","Male with round face and wide nose",sketch_021.jpg
+22,Aakash Mehta,26,2023,Online Fraud,2,Mumbai,Under Investigation,"Runs fake online shopping websites and collects payments without delivering products.","Young man with oval face and curly hair",sketch_022.jpg
+23,Hassan Raza,38,2019,Extortion,6,Hyderabad,At Large,"Threatens business owners for money and uses intimidation tactics.","Man with square face and moustache",sketch_023.jpg
+24,Manish Yadav,28,2022,Robbery,3,Patna,At Large,"Robbed convenience stores during late night hours using simple weapons.","Male with narrow face and sharp nose",sketch_024.jpg
+25,Farhan Sheikh,40,2020,Drug Trafficking,5,Mumbai,At Large,"Supplies narcotics to clubs and nightlife venues and maintains distribution networks.","Middle aged man with beard and curly hair",sketch_025.jpg
+26,Ankit Jain,23,2023,Phone Theft,2,Delhi,At Large,"Targets college students and metro passengers stealing smartphones quickly.","Young male with round face",sketch_026.jpg
+27,Shahid Hussain,34,2021,Burglary,3,Hyderabad,At Large,"Breaks into office buildings at night focusing on laptops and valuables.","Man with oval face and pointed chin",sketch_027.jpg
+28,Victor Dsouza,41,2018,Illegal Arms Trade,6,Goa,Under Investigation,"Suspected illegal firearm dealer supplying weapons across state borders.","Male with beard and square jaw",sketch_028.jpg
+29,Ramesh Thakur,27,2023,Pickpocketing,3,Delhi,At Large,"Works with pickpocket gangs in bus terminals markets and crowded areas.","Young man with curly hair",sketch_029.jpg
+30,Kishore Naidu,33,2022,Street Robbery,4,Chennai,At Large,"Targets pedestrians in poorly lit streets during night hours.","Man with round face and thick eyebrows",sketch_030.jpg
+31,Unknown Person,24,,,,0,Unknown,No Record,"No criminal record found in police database.","Young woman with long straight hair and oval face",sketch_031.jpg
+32,Unknown Person,28,,,,0,Unknown,No Record,"Face stored only for reference dataset.","Female with round face and medium hair",sketch_032.jpg
+33,Unknown Person,30,,,,0,Unknown,No Record,"Image stored for system training purposes.","Woman with long wavy hair and oval face",sketch_033.jpg
+34,Unknown Person,22,,,,0,Unknown,No Record,"No police cases registered for this person.","Young woman with narrow face and curly hair",sketch_034.jpg
+35,Unknown Person,35,,,,0,Unknown,No Record,"Person not linked to any criminal activity.","Female with straight shoulder length hair",sketch_035.jpg
+36,Unknown Person,40,,,,0,Unknown,No Record,"Database placeholder record used for testing.","Woman with oval face and medium hair",sketch_036.jpg
+37,Unknown Person,25,,,,0,Unknown,No Record,"Image included for recognition accuracy testing.","Young woman with long curly hair",sketch_037.jpg
+38,Unknown Person,30,,,,0,Unknown,No Record,"No police complaints found.","Female with round face and straight hair",sketch_038.jpg
+39,Unknown Person,34,,,,0,Unknown,No Record,"Not associated with criminal database.","Woman with oval face and long hair",sketch_039.jpg
+40,Unknown Person,23,,,,0,Unknown,No Record,"Only used for system comparison.","Young female with curly hair and narrow face",sketch_040.jpg
+41,Unknown Person,28,,,,0,Unknown,No Record,"No criminal record found.","Female with straight hair and oval face",sketch_041.jpg
+42,Unknown Person,32,,,,0,Unknown,No Record,"No criminal record found.","Female with round face and medium hair",sketch_042.jpg
+43,Unknown Person,24,,,,0,Unknown,No Record,"No criminal record found.","Young woman with long straight hair",sketch_043.jpg
+44,Unknown Person,29,,,,0,Unknown,No Record,"No criminal record found.","Female with curly hair and narrow face",sketch_044.jpg
+45,Unknown Person,37,,,,0,Unknown,No Record,"No criminal record found.","Woman with round face and medium hair",sketch_045.jpg
+46,Unknown Person,26,,,,0,Unknown,No Record,"No criminal record found.","Young woman with long wavy hair",sketch_046.jpg
+47,Unknown Person,31,,,,0,Unknown,No Record,"No criminal record found.","Female with straight hair and narrow face",sketch_047.jpg
+48,Unknown Person,35,,,,0,Unknown,No Record,"No criminal record found.","Woman with curly hair and oval face",sketch_048.jpg
+49,Unknown Person,22,,,,0,Unknown,No Record,"No criminal record found.","Young female with round face and small nose",sketch_049.jpg
+50,Unknown Person,30,,,,0,Unknown,No Record,"No criminal record found.","Woman with oval face and medium hair",sketch_050.jpg

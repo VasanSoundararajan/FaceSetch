@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Suspect Result</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: #f4f6fb;
+        }
+
+        /* NAVBAR */
+
+        .navbar {
+            background: linear-gradient(90deg, #b30000, #ff2a2a);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 70px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+        }
+
+        .logo {
+            background: #1f3a3d;
+            padding: 18px 35px;
+            border-radius: 0 0 40px 40px;
+            color: white;
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        .profile {
+            color: white;
+            font-size: 15px;
+        }
+
+        /* LAYOUT */
+
+        .wrapper {
+            display: flex;
+        }
+
+        /* SIDEBAR */
+
+        .sidebar {
+            width: 240px;
+            min-height: 100vh;
+            background: linear-gradient(180deg, #8b0000, #d10000);
+            padding-top: 40px;
+            box-shadow: 5px 0 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .sidebar a {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 12px 18px;
+            padding: 14px 18px;
+            border-radius: 12px;
+            text-decoration: none;
+            color: white;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            transition: 0.35s;
+        }
+
+        .sidebar a:hover {
+            background: white;
+            color: #b30000;
+            transform: translateX(6px);
+        }
+
+        /* CONTENT */
+
+        .content {
+            flex: 1;
+            padding: 40px 60px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .title {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        /* PROMPT BOX */
+
+        .prompt-box {
+            background: #fff3cd;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .clean-box {
+            background: #eef4ff;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+        }
+
+        /* IMAGE GRID */
+
+        .face-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+            gap: 40px;
+        }
+
+        /* IMAGE CARD */
+
+        .face-box {
+            background: white;
+            padding: 20px;
+            border-radius: 16px;
+            border: 2px solid #eee;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            transition: 0.3s;
+        }
+
+        .face-box:hover {
+            transform: translateY(-6px);
+            border-color: #b30000;
+        }
+
+        .image-frame {
+            width: 100%;
+            height: 350px;
+            background: #f3f3f3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .image-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        /* RESULT CARD */
+
+        .result-card {
+            margin-top: 40px;
+            background: white;
+            padding: 30px;
+            border-radius: 16px;
+            border: 2px solid #eee;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            max-width: 700px;
+        }
+
+        .result-card h2 {
+            color: #b30000;
+            margin-bottom: 10px;
+        }
+
+        /* CONFIDENCE BAR */
+
+        .confidence {
+            margin-top: 15px;
+        }
+
+        .bar {
+            height: 12px;
+            background: #eee;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .bar span {
+            display: block;
+            height: 100%;
+            background: #b30000;
+            width: 85%;
+        }
+
+        /* LOADER */
+
+        .loader {
+            border: 6px solid #f3f3f3;
+            border-top: 6px solid #b30000;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin: auto;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .loading {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        /* FOOTER */
+
+        .footer {
+            background: #111;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-size: 13px;
+            margin-top: 40px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="navbar">
+        <div class="logo">🕵️ Forensic AI</div>
+
+        <div class="profile">
+            <i class="fa-solid fa-user-shield"></i>
+            Police Panel
+        </div>
+    </div>
+
+    <div class="wrapper">
+
+        <div class="sidebar">
+
+            <a href="/police_dashboard">
+                <i class="fa-solid fa-chart-line"></i>
+                Dashboard
+            </a>
+
+            <a href="/voice_input" class="active">
+                <i class="fa-solid fa-microphone"></i>
+                Suspect Identification
+            </a>
+
+            <a href="/logout">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                Logout
+            </a>
+
+        </div>
+
+        <div class="content">
+
+            <h1 class="title">AI Suspect Analysis</h1>
+
+            <div class="prompt-box">
+                <strong>User Description:</strong> {{user_prompt}}
+            </div>
+
+            <div class="clean-box">
+                <strong>Extracted Keywords:</strong> {{keywords}}
+            </div>
+
+            <div id="loading" class="loading">
+
+                <div class="loader"></div>
+                <p>AI is generating suspect face...</p>
+
+            </div>
+
+            <div class="face-grid">
+
+                <div class="face-box">
+
+                    <h3>Forensic Sketch</h3>
+
+                    <div class="image-frame">
+                        <img id="sketchImg" style="display:none;">
+                    </div>
+
+                </div>
+
+                <div class="face-box">
+
+                    <h3>Synthesized suspect Face</h3>
+
+                    <div class="image-frame">
+                        <img id="faceImg" style="display:none;">
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div id="resultBox" class="result-card" style="display:none;">
+
+                {% if found %}
+
+                <h2>Criminal Match Found</h2>
+
+                <p><strong>Case ID:</strong> #{{age}}{{crimes}}</p>
+                <p><strong>Name:</strong> {{name}}</p>
+                <p><strong>Age:</strong> {{age}}</p>
+                <p><strong>Crime:</strong> {{crime}}</p>
+                <p><strong>No of Crimes:</strong> {{crimes}}</p>
+                <p><strong>Crime Year:</strong> {{year}}</p>
+
+                <p><strong>Description:</strong><br>{{description}}</p>
+
+                <div class="confidence">
+
+                    <p><strong>AI Match Confidence</strong></p>
+
+                    <div class="bar">
+                        <span></span>
+                    </div>
+
+                    <p>85% Similarity</p>
+
+                </div>
+
+                {% else %}
+
+                <h2>No Criminal Match Found</h2>
+
+                <p>The generated suspect does not match the criminal database.</p>
+
+                {% endif %}
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="footer">
+        Forensic AI Investigation System
+    </div>
+
+    <div id="imageData" data-sketch="{{sketch_img}}" data-face="{{colored_face}}" style="display:none;"></div>
+
+    <script>
+
+        var imageData = document.getElementById("imageData");
+
+        var sketchPath = imageData.dataset.sketch;
+        var facePath = imageData.dataset.face;
+
+        setTimeout(function () {
+
+            document.getElementById("loading").style.display = "none";
+
+            var sketch = document.getElementById("sketchImg");
+            sketch.src = sketchPath;
+            sketch.style.display = "block";
+
+        }, 3500);
+
+        setTimeout(function () {
+
+            var face = document.getElementById("faceImg");
+            face.src = facePath;
+            face.style.display = "block";
+
+        }, 5000);
+
+        setTimeout(function () {
+
+            document.getElementById("resultBox").style.display = "block";
+
+        }, 6500);
+
+    </script>
+
+</body>
+
+</html>
